@@ -12,8 +12,7 @@ query = "SELECT * FROM 'patient records'"
 
 cursor.execute(query)
 
-for (First Name,Last Name,Patient ID,Gender,DOB,Telephone.no,Emergency Contact,Blood Type	Allergies	
-) in cursor:
-    pass
+for (firstName,	lastName,	patientID,	gender,	dob, telephoneNO, emergency_Contact, bloodType, allergies) in cursor:
+    print(firstName,	lastName,	patientID,	gender,	dob, telephoneNO, emergency_Contact, bloodType, allergies)
 
 

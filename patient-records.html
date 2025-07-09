@@ -17,39 +17,56 @@
         </nav>          
     </div>
     <div class="content">
-        <h2>PATIENT RECORDS</h2>
         <div class="top-bar">
-            <label for="search">Search<input type="search" name="search" placeholder="search"></label>
-            <div><p>Add</p>
-                <p>Edit</p>
-                <p>Delete</p>
+            <h1>PATIENT RECORDS</h2>
+             
+            <div class="top-bar2">
+                <label for="search">Search<input type="search" name="search" placeholder="search"></label>
+                <a href="#">Add</a>
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
             </div>
         </div>
-        <div>
-            <label> First Name <input type="text"></label>
-            <label> Last Name <input type="text"></label>
-            <label> ID <input type="date"></label>
-            <label> Gender: <input type="date"></label>
-            <label> DOB <input type="date"></label>
-            <label> Telephone Number <input type="number"></label>
-            <label> emergency Contact: <input type="number"></label>
-            <label>Chronical illness:
-                <label><input type="checkbox">Diabetes</label>
-                <label><input type="checkbox">Cancer</label>
-                <label><input type="checkbox">Hypertension (High Blood Pressure)</label>
-                <label><input type="checkbox">Asthma</label>
-                <label><input type="checkbox">Epilepsy</label>
-                <label><input type="checkbox">Stroke</label>
-                <label><input type="checkbox">Chronic Liver Disease</label>
-                <label><input type="checkbox">Mental Health Condition</label>
-                <label><input type="checkbox">Sickle Cell Disease</label>
-                <label><input type="checkbox">Thyroid Disorder</label>
-                <label><input type="checkbox">Arthritis</label>
+        <div class="patient-data">
+            <form action="" method="post">
+                <label> First Name <input type="text"></label>
+                <label> Last Name <input type="text"></label>
+                <label> ID <input type="text"></label>
+                <p> Gender: 
+                    <input type="radio">F
+                    <input type="radio">M
+                </p>
+                <label> DOB <input type="date"></label>
+                <label> Telephone Number <input type="number"></label>
+                <label> emergency Contact: <input type="number"></label>
+                <ul>
+                    <h3>Chronical illness:</h3>
+                    <li><label><input type="checkbox">Diabetes</label></li>
+                    <li><label><input type="checkbox">Cancer</label></li>
+                    <li><label><input type="checkbox">Hypertension (High Blood Pressure)</label></li>
+                    <li><label><input type="checkbox">Asthma</label></li>
+                    <li><label><input type="checkbox">Epilepsy</label></li>
+                    <li><label><input type="checkbox">Stroke</label></li>
+                    <li><label><input type="checkbox">Chronic Liver Disease</label></li>
+                    <li><label><input type="checkbox">Mental Health Condition</label></li>
+                    <li><label><input type="checkbox">Sickle Cell Disease</label></li>
+                    <li><label><input type="checkbox">Thyroid Disorder</label></li>
+                    <li><label><input type="checkbox">Arthritis</label></li>
+                </ul>
+                    
+                <p> Blood Type:
+                    <input type="radio">A
+                    <input type="radio">B
+                    <input type="radio">AB
+                    <input type="radio">O
+                </p>
+                <label> Allergies <input type="text"></label>
 
-            </label>
-            <label> Blood Type: <input type="radio"></label>
-            <label> Allergies <input type="text"></label>
-        </div>    
+                <input type="submit" value="submit">
+            </form>
+            
+        </div>
+        <div class="Bio-data"></div>    
     </div>
    
     </div>

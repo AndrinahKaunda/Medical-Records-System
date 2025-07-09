@@ -225,6 +225,7 @@ body{
     align-items: left;
     z-index: 500;
     flex-direction: column;
+    overflow:auto;
 
 }
 .navigation.two{
@@ -240,4 +241,41 @@ body{
     background-position: center;
     height: 100vh; /* full screen */
     width: 100%;
-}   
+    left: 20%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+/*##### PATIENT RECORDS PAGE #####*/
+.top-bar{
+    position: fixed;
+    top: 0;
+    left: 50%;
+    padding: 20px 0px;
+    color: rgb(1, 13, 30);
+}
+.top-bar h1{
+    font-size: 2.5em ;
+    
+    margin-bottom: 20px;
+}
+.top-bar2{
+    font-size: 1.2em;
+}
+.top-bar2 a{
+    text-decoration: none;
+}
+.patient-data{
+    position: relative;
+    padding: 20px;
+    background-color: rgb(175, 203, 245);
+    background: transparent;
+    border:2px solid white;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgb(1, 1, 40);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
