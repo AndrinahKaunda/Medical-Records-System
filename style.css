@@ -247,7 +247,7 @@ body{
     display: flex;
 }
 
-/*##### PATIENT RECORDS PAGE #####*/
+/*##### PATIENT RECORDS PAGE #####
 .top-bar{
     position: fixed;
     top: 0;
@@ -278,4 +278,267 @@ body{
     display: flex;
     justify-content: center;
     align-content: center;
+}*/
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonts and Body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f9ff;
+  color: #010128;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Side Navigation */
+.medical-data-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  background-color: rgb(2, 2, 113);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 100;
+}
+
+.medical-data-header .logo {
+  font-size: 1.5em;
+  color: #afcbf5;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.navigation.two {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation.two a {
+  color: #afcbf5;
+  text-decoration: none;
+  font-size: 1em;
+  margin-bottom: 20px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.navigation.two a:hover {
+  background-color: #0d0d40;
+  border-radius: 6px;
+  color: white;
+}
+
+/* Main Content */
+.content {
+  left: 10%;
+  padding: 10px;
+  width: 80%;
+  background-image: url('images/Landin2.jpeg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Top Bar */
+.top-bar {
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.top-bar h1 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.top-bar2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar2 input[type="search"] {
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+.action-buttons a {
+  background-color: #010128;
+  color: white;
+  padding: 8px 15px;
+  margin-right: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.action-buttons a:hover {
+  background-color: #222266;
+}
+
+/* Patient Form */
+.patient-data {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(1, 1, 40, 0.3);
+  max-width: 700px;
+  margin: auto;
+}
+
+.patient-form label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #010128;
+}
+
+.patient-form input[type="text"],
+.patient-form input[type="number"],
+.patient-form input[type="date"],
+.patient-form input[type="tel"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Radio and Checkbox Groups */
+.form-group {
+  margin: 20px 0;
+}
+
+.form-group p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  margin-right: 15px;
+}
+
+.checkbox-list {
+  list-style: none;
+  padding-left: 0;
+  columns: 2;
+  margin-top: 10px;
+}
+
+.checkbox-list li {
+  margin-bottom: 8px;
+}
+
+input[type="submit"].btn {
+  margin-top: 20px;
+  background-color: #010128;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input[type="submit"].btn:hover {
+  background-color: #222266;
+}
+/*## visitrecords*/
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f8fc;
+}
+
+
+
+ /* visit records */
+
+
+.top-bar2 {
+  margin-top: 15px;
+  display: flex;
+  gap: 20px;
+}
+
+.top-bar2 p {
+  background-color: #010128;
+  color: white;
+  padding: 6px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.top-bar2 p:hover {
+  background-color: #232377;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 10px rgba(1, 1, 40, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+table tr:first-child {
+  background-color: rgb(2, 2, 113);
+  color: white;
+  text-align: left;
+}
+
+table td {
+  padding: 12px 16px;
+  font-size: 0.95em;
+  color: #010128;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .medical-data-header {
+    display: none;
+  }
+
+  table, .top-bar {
+    font-size: 0.9em;
+  }
 }
