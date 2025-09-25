@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, session
 import mysql.connector
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 #connect to database
@@ -51,7 +51,31 @@ def register():
                 return "Registration failed"
             
             
-       
+@app.route('/login', methods=["GET","POST"])
+def login():
+    if request.method =="POST":   
+        email =request.form['email']
+        password = request.form['passwd']
+         
+
+        #Authentication
+        cursor.execute("SELECT username, email, password FROM users WHERE email = %s", (email,))
+        user = cursor.fetchone()
+
+        if user:
+            username, email, stored_hash = user
+            # Compare entered password with stored hash
+            if check_password_hash(stored_hash, password):
+                print("Successfully logged in")
+                return render_template("dashboard.html", username=username)
+            else:
+                return "INVALID Email OR PASSWORD"
+        else:
+            return "INVALID Email OR PASSWORD"
+    
+   
+    return redirect("/login")
+        
 
                         
         
