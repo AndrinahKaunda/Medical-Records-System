@@ -9,12 +9,30 @@
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Services</a>
+            {% if session.get('username') %}
+            <a class="log-out" href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
             <a class="login-popup" href="#">Login</a>
+            {% endif %}
         </nav>
     </div>
+
+    <!-- Flash messages -->
+    <!--{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="flash-messages">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+        </div>
+    {% endif %}
+    {% endwith %}-->
+
+
     <div id="main" >
         <div class="wrapper">
             <a href="#" class="close"><img src="/static/images/exit.png" alt="Cancel"></a>
+            <!-- Login form -->
             <div class="form-box login">
             <h3>Login</h3>
             <form method="POST" action="/login">

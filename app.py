@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session, flash, url_for
 import mysql.connector
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
+app.secret_key = "secret"
 #connect to database
 db = mysql.connector.connect(
     host = "localhost",
@@ -38,17 +39,18 @@ def register():
         cursor.execute("SELECT email FROM users WHERE email = %s ", (email,))
         #if it finds match
         if cursor.fetchone():
-            cursor.close
-            return "email already registered"
+            cursor.close()
+            return ("email already registered")
+            
         else:
             cursor.execute("INSERT INTO users (username, email, password) VALUES (%s, %s, %s)",
             (username, email, hashed_pw)
             )
             db.commit()  # Save changes to the database
             if cursor.rowcount > 0:
-                return "Successfully registered"
+                return ("Successfully registered")
             else:
-                return "Registration failed"
+                return ("Registration failed")
             
             
 @app.route('/login', methods=["GET","POST"])
@@ -66,24 +68,42 @@ def login():
             username, email, stored_hash = user
             # Compare entered password with stored hash
             if check_password_hash(stored_hash, password):
-                print("Successfully logged in")
-                return render_template("dashboard.html", username=username)
+                session['username'] = username
+                session['email'] = email
+               # message =flash("Successfully logged in")
+                return render_template("dashboard.html")
             else:
-                return "INVALID Email OR PASSWORD"
+                return ("INVALID Email OR PASSWORD")
         else:
             return "INVALID Email OR PASSWORD"
-    
-   
-    return redirect("/login")
         
 
-                        
-        
+#dashboard route
+@app.route("/dashboard")
+def dashboard():
+    if "username" not in session:
+        flash("please login")
+        return redirect(url_for("login"))
+    return render_template("dashbord.html", username=session["username"])
+
+@app.route("/patient-records")
+def patient_records():
+    return render_template("patient-records.html")
+
+@app.route("/visit-record")
+def visit_record():
+    return render_template("visit-record.html")
+
+#logging out 
+@app.route("/logout")
+def logout():
+    session.clear()
+    flash("you have been logged out")
+    return redirect("/")
 
 
-
+#register: validating imputs
 def validate_user(username, email, password):
-    #validate inputs
         if username == "" or email == "" or password == "":
             return "Please fill all fields."
 
