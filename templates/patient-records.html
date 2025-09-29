@@ -1,0 +1,70 @@
+{%extends "auth_base.html"%}
+{% block content %}
+    <!-- Main Content Area -->
+    
+    <div class="top-bar">
+        <h1>PATIENT RECORDS</h1>
+        
+        <div class="top-bar2">
+            <label for="search">
+                Search:
+                <input type="search" name="search" id="search" placeholder="Search by name or ID">
+            </label>
+            <div class="action-buttons">
+                <a class="addPop" href="#">Add</a>
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Patient Form -->
+    <div class="patient-data">
+        <form action="#" method="post" class="patient-form">
+            <label>First Name <input type="text" name="first_name" required></label>
+            <label>Last Name <input type="text" name="last_name" required></label>
+            <label>Patient ID <input type="text" name="patient_id" required></label>
+            
+            <div class="form-group">
+                <p>Gender:</p>
+                <label><input type="radio" name="gender" value="F"> Female</label>
+                <label><input type="radio" name="gender" value="M"> Male</label>
+            </div>
+
+            <label>Date of Birth <input type="date" name="dob" required></label>
+            <label>Telephone Number <input type="tel" name="phone" required></label>
+            <label>Emergency Contact <input type="tel" name="emergency_contact" required></label>
+
+            <div class="form-group">
+                <h3>Chronic Illnesses:</h3>
+                <ul class="checkbox-list">
+                    <li><label><input type="checkbox" name="illnesses" value="Diabetes"> Diabetes</label></li>
+                    <li><label><input type="checkbox" name="illnesses" value="Cancer"> Cancer</label></li>
+                    <li><label><input type="checkbox" name="illnesses" value="Hypertension"> Hypertension</label></li>
+                    <li><label><input type="checkbox" name="illnesses" value="Asthma"> Asthma</label></li>
+                    <li><label><input type="checkbox" name="illnesses" value="Epilepsy"> Epilepsy</label></li>
+                    <li><label><input type="checkbox" name="illnesses" value="Stroke"> Stroke</label></li>
+                    <li><label><input type="checkbox" name="illnesses" value="Liver Disease"> Chronic Liver Disease</label></li>
+                    <li><label><input type="checkbox" name="illnesses" value="Mental Health"> Mental Health Condition</label></li>
+                    <li><label><input type="checkbox" name="illnesses" value="Sickle Cell"> Sickle Cell Disease</label></li>
+                    <li><label><input type="checkbox" name="illnesses" value="Thyroid"> Thyroid Disorder</label></li>
+                    <li><label><input type="checkbox" name="illnesses" value="Arthritis"> Arthritis</label></li>
+                </ul>
+            </div>
+
+            <div class="form-group">
+                <p>Blood Type:</p>
+                <label><input type="radio" name="blood_type" value="A"> A</label>
+                <label><input type="radio" name="blood_type" value="B"> B</label>
+                <label><input type="radio" name="blood_type" value="AB"> AB</label>
+                <label><input type="radio" name="blood_type" value="O"> O</label>
+            </div>
+
+            <label>Allergies <input type="text" name="allergies"></label>
+
+            <input type="submit" value="Submit" class="btn">
+        </form>
+    </div>
+    
+
+{% endblock %}

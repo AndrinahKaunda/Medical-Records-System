@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block head %} <title>Medical Records Systems</title> {% endblock %}
+    
+{% block body %}
+    <div class="medical-data-header">
+        <h2 class="logo">MEDICAL RECORDS SYSTEM</h2>
+        <nav class="navigation two">
+            <a href="{{url_for('patient_records')}}">Patient Records</a>
+            <a href="{{url_for('visit_record')}}">Visit Records</a>
+            <a href="#">Prescription</a>
+            <a class="log-out" href="{{url_for('index')}}">Log Out</a>
+        </nav>
+    </div>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+   
+   
+{% endblock %}

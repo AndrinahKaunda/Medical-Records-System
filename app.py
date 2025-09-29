@@ -79,18 +79,18 @@ def login():
         
 
 #dashboard route
-@app.route("/dashboard")
+@app.route("/dashboard", methods=["GET", "POST"])
 def dashboard():
     if "username" not in session:
         flash("please login")
         return redirect(url_for("login"))
     return render_template("dashbord.html", username=session["username"])
 
-@app.route("/patient-records")
+@app.route("/patient-records", methods=["GET", "POST"])
 def patient_records():
     return render_template("patient-records.html")
 
-@app.route("/visit-record")
+@app.route("/visit-record", methods=["GET", "POST"])
 def visit_record():
     return render_template("visit-record.html")
 
