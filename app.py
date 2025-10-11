@@ -86,10 +86,33 @@ def dashboard():
         return redirect(url_for("login"))
     return render_template("dashbord.html", username=session["username"])
 
+#patient Records
 @app.route("/patient-records", methods=["GET", "POST"])
 def patient_records():
-    return render_template("patient-records.html")
+    if request.method =='POST':
+        patient_id = request.form['patient_id']
+        firstName = request.form['firstName']
+        lastName = request.form['lastName']
+        gender = request.form['gender']
+        dob = request.form['dob']
+        contact = request.form['contact']
 
+        cursor.execute("INSERT INTO patients(patient_id, firstName, lastName, gender, dob, contact) VALUES (%s, %s, %s, %s, %s, %s)",
+            (patient_id, firstName, lastName, gender, dob, contact))
+        db.commit()
+        flash("Patient record added successfully")
+        return redirect(url_for("Patient_records"))
+        #return render_template("patient-records.html")
+
+        # If it's a GET request, display the list of patients
+    if request.method  == "GET": 
+        cursor.execute("SELECT * FROM patients")
+        patients = cursor.fetchall()
+        return render_template("patient-records.html", patients=patients)
+
+    
+    
+    #Visit Records
 @app.route("/visit-record", methods=["GET", "POST"])
 def visit_record():
     return render_template("visit-record.html")
@@ -115,6 +138,7 @@ def validate_user(username, email, password):
         
 
 
+    
 
 
 

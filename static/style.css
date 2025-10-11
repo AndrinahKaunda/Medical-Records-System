@@ -340,13 +340,13 @@ body {
 /* Main Content */
 .content {
   left: 10%;
-  margin-top: 100px;
   padding: 10px;
   width: 80%;
-  background-image: url('images/Landin2.jpeg');
+  
+  /*background-image: url('images/Landin.jpeg');
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  min-height: 100vh;*/
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
